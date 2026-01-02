@@ -1,13 +1,12 @@
-import { planets } from "../../models/planets.model.js"
+import { getAllPlanets } from "../../models/planets.model.js"
 
-
-function getAllPlanets(req,res){
+function httpGetAllPlanets(req,res){
     return res.status(200).json(
-    planets.map(planet => ({
+    getAllPlanets().map(planet => ({
     keplerName: planet.kepler_name,
   })))
 
 }
 export {
-getAllPlanets
+  httpGetAllPlanets
 };

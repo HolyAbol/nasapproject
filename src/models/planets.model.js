@@ -38,4 +38,7 @@ function LoadPlanets(){
         })
       })
 }
-export {planets,LoadPlanets}
+function getAllPlanets(){
+    return planets
+}
+export {getAllPlanets,LoadPlanets}

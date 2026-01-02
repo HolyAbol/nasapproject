@@ -15,9 +15,6 @@ app.use(cors({
 }))
 app.use(morgan('combined'))
 app.use(express.static(path.join(__dirname,'..','public','build')));
-app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname,'..','public','build','index.html'))
-})
-app.use(launchRouter)
-app.use(planetRouter)
+app.use('/api/launches',launchRouter)
+app.use('/api/planets',planetRouter)
 export default app;
